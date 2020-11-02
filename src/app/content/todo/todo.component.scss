@@ -1,0 +1,70 @@
+@import "../../../variables.scss";
+
+.todo-container {
+  .container-wrap {
+    opacity: 0.89;
+    background-color: $background-blue-shade;
+    color: $font-color-white;
+    height: 90%;
+    width: 50%;
+    padding: 2%;
+
+    h3 {
+      text-align: center;
+      border-bottom-style: groove;
+    }
+
+    p{
+      margin: 0;
+    }
+    
+    .add-task-container {
+      margin: 2% 0;
+
+      button {
+        width: 20%;
+        margin-left: 2%;
+      }
+    }
+
+    .unfinshed-task-container,
+    .completed-task-container {
+      max-height: 25%;
+      overflow: auto;
+
+      .task-content {
+        margin: 1% 0;
+        border: 0.5px solid;
+        align-items: center;
+      }
+
+      .task-container {
+        flex: 1;
+
+        label {
+          margin: 0;
+        }
+      }
+
+      .control-option {
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button {
+          min-width: 40%;
+        }
+      }
+    }
+
+    .controller-container {
+      margin: 2% 0 0;
+      text-align: center;
+
+      button {
+        margin: 0 2%;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../variables.scss";
+
+.header-container {
+  background-image: url("../../assets/images/header-image.jpeg");
+  background-color: $header-background-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: soft-light;
+  position: relative;
+  height: $header-height;
+  width: $header-width;
+  display: flex;
+  align-items: center;
+
+  .brand-logo {
+    height: 100%;
+    width: 10vw;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .nav-content {
+    flex: 1;
+    position: absolute;
+    left: 10vw;
+
+    .link-container {
+      display: flex;
+      list-style: none;
+      flex: 1;
+
+      .link-item {
+        margin: 0 0.5rem;
+
+        a {
+          text-decoration: none;
+          color: $header-font-color;
+        }
+      }
+    }
+  }
+}

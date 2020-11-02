@@ -1,0 +1,46 @@
+<div class="todo-container main-container">
+  <div class="container-wrap">
+    <h3>ToDo Application - CURD Operations</h3>
+    <div class="add-task-container display-flex">
+      <input type="text" class="form-control" #newTask>
+      <button class="btn btn-primary" (click)="addNewtask()">Add Task</button>
+    </div>
+
+    <p>ToDo List</p>
+    <div class="unfinshed-task-container">
+      <div class="display-flex width-100 task-content" *ngFor="let list of unfinshedTask; trackBy: trackByItems" >
+          <div class="task-container">
+            <input [id]="list.id" type="checkbox" [checked]="list.isComplete" [(ngModel)]="list.isComplete" (change)="update(list)">
+            <label [for]="list.id">{{ list.title }}</label>
+          </div>
+          <div class="control-option">
+            <button class="btn btn-primary">edit</button>
+            <span>|</span>
+            <button class="btn btn-danger" (click)="deleteTask(list)">delete</button>
+          </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <p>Completed task</p>
+    <div class="completed-task-container">
+      <div class="display-flex width-100 task-content" *ngFor="let clist of completedTask; trackBy: trackByItems">
+          <div class="task-container">
+            <!-- <input type="checkbox"> -->
+            <label>{{ clist.title }}</label>
+          </div>
+          <div class="control-option">
+            <button class="btn btn-primary" (click)="markAsUnFinshed(clist)">Not Done</button>
+            <span>|</span>
+            <button class="btn btn-danger" (click)="deleteTask(clist)">delete</button>
+          </div>
+      </div>
+    </div>
+  
+    <div class="controller-container">
+      <button class="btn btn-success" (click)="markAllAsComplete()">Mark All Completed</button>
+      <button class="btn btn-danger" (click)="deleteAll()">Clear ToDo List</button>
+    </div>
+  </div>
+</div>

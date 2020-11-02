@@ -1,0 +1,19 @@
+@import '../../variables.scss';
+
+.footer-container {
+    background-color: $footer-background-color;
+    height: $footer-height;
+    width: $footer-width;
+    position: relative;
+    align-items: center;
+    color: #fff;
+
+    .footer-content {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        display: flex;
+    }
+}

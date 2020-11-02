@@ -1,0 +1,82 @@
+<div class="main-container form-container">
+  <form [formGroup]="bookingDetails">
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="fname" class="form-control-placeholder">FirstName</label>
+        <input type="text" id="fname" class="form-control" name="fname" formControlName="fname">
+      </div>
+  
+      <div class="form-group col-md-6">
+        <label for="lname" class="">LastName</label>
+        <input type="text" id="lname" class="form-control" name="lname" formControlName="lname">
+      </div>
+    </div>
+   
+    <div class="row">
+      <div class="form-group col-md-4">
+        <label for="age" class="">Age</label>
+        <input type="number" class="form-control" name="age" formControlName="age">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="dob" class="">D.O.B</label>
+        <input type="date" id="dob" class="form-control" name="dob" formControlName="dob">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="bookTime">Book @</label>
+        <input type="time" id="bookTime" class="form-control" name="bookTime" formControlName="bookTime">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" class="form-control" name="email" formControlName="email">
+    </div>
+    
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" class="form-control" name="password" formControlName="password">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="cpwd">Confirm Password</label>
+        <input type="password" id="cpwd" class="form-control" name="cpassword" formControlName="cpassword">
+      </div>
+    </div> 
+
+    <div class="gender row">
+      <label class="col-md-12">Gender</label>
+      <div class="form-group col-md-4" *ngFor="let gen of gender">
+        <label for="male">
+          <input name="gender" type="radio" [value]="gen.code" formControlName="gender">
+            {{ gen.valueStr }}
+        </label>
+      </div>
+    </div>
+    
+    <div class="language row">
+      <label class="col-md-12">Choose your favorite language</label>
+      <div class="form-group col-md-4" *ngFor="let lang of languages">
+        <label for="CPP">
+          <input type="checkbox" [value]="lang.code" [checked]="lang.checked" (change)="getSelectedLang($event, lang)">
+            {{ lang.valueStr }}
+        </label>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="form-group">
+        <label>Select City</label>
+        <select class="form-control" formControlName="city">
+          <option>--cities--</option>
+          <option *ngFor="let city of cities" [value]="city.code">{{ city.valueStr }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="">
+      <button class="btn btn-primary" (click)="submitForm()">Submit</button>
+    </div>
+  </form>
+</div>
